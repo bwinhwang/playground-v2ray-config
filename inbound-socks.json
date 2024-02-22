@@ -1,0 +1,30 @@
+{
+  // List of inbound proxy configurations.
+  "inbounds": [
+
+      {
+          "port": 1080,
+
+          // IP address to listen on. Change to "0.0.0.0" to listen on all network interfaces.
+          "listen": "0.0.0.0",
+
+          // Tag of the inbound proxy. May be used for routing.
+          "tag": "socks-inbound",
+          "protocol": "socks",
+
+          "settings": {
+                "auth": "noauth",
+                "udp": false,
+                "ip": "127.0.0.1"
+          },
+
+          // Enable sniffing on TCP connection.
+          "sniffing": {
+                "enabled": true,
+                "domainOverride": ["http", "tls"],
+                // Target domain will be overriden to the one carried by the connection, if the connection is HTTP or HTTPS.
+                "destOverride": ["http", "tls"]
+              }
+        }
+  ]
+}

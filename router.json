@@ -1,0 +1,22 @@
+{
+// Routing controls how traffic from inbounds are sent to outbounds.
+  "routing": {
+      "domainStrategy": "IPOnDemand",
+      //"domainStrategy": "IPIfNonMatch",
+      "rules":[
+            {
+                    "type": "field",
+                    "domain": ["baidu.com"],
+                    "outboundTag": "blackhole"
+            },
+            {
+                    "type": "field",
+                    "domain": ["baidu.com"],
+                    "outboundTag": "direct1"
+            }
+
+
+          ]
+    }
+
+}

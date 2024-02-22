@@ -1,0 +1,31 @@
+{
+
+  // List of outbound proxy configurations.
+	"outbounds": [
+		{
+			// Tag of the outbound. May be used for routing.
+			"tag": "blackhole",
+			"protocol": "blackhole"
+		},
+
+		{
+			// Tag of the outbound. May be used for routing.
+			"tag": "direct",
+			"protocol": "freedom",
+			"settings": {
+				//"domainStrategy": "UseIP"
+				"domainStrategy": "AsIs"
+			}
+		},
+		{
+			// Tag of the outbound. May be used for routing.
+			"tag": "default1",
+			"protocol": "freedom",
+			"settings": {
+				//"domainStrategy": "UseIP"
+				"domainStrategy": "AsIs"
+			}
+		}
+
+  ]
+}
